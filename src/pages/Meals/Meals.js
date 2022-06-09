@@ -1,12 +1,14 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import {View, Text} from 'react-native';
+import React from 'react';
 
-const Meals = () => {
+import styles from './Meals.style';
+
+const MealsScreen = () => {
   return (
     <View>
       <Text>Meals</Text>
     </View>
-  )
-}
+  );
+};
 
-export default Meals
+export default MealsScreen;

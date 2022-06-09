@@ -3,7 +3,7 @@ import React from 'react';
 
 import styles from './Detail.style';
 
-const Detail = () => {
+const DetailScreen = () => {
   return (
     <View>
       <Text>Detail</Text>
@@ -11,4 +11,4 @@ const Detail = () => {
   );
 };
 
-export default Detail;
+export default DetailScreen;

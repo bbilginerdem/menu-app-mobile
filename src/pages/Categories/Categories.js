@@ -1,7 +1,9 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 
-const Categories = () => {
+import styles from './Categories.style';
+
+const CategoriesScreen = () => {
   return (
     <View>
       <Text>Categories</Text>
@@ -9,4 +11,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default CategoriesScreen;
