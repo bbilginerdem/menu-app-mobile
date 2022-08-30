@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
-import { View, Text, Button, Pressable, FlatList } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import {
+  View,
+  Text,
+  Button,
+  Pressable,
+  FlatList,
+  ActivityIndicator,
+} from 'react-native';
 import axios from 'axios';
+import { API_URL } from '@env';
 
 import styles from './Categories.style';
 import CategoryCard from '../../components/CategoryCard';
 
 const CategoriesScreen = () => {
+  const [loading, setLoading] = useState(true);
   const [categoryList, setCategoryList] = useState({});
-  async function fetchData() {
-    const response = await axios.get(
-      'https://www.themealdb.com/api/json/v1/1/categories.php',
-    );
 
+  // fetching data from url
+  async function fetchData() {
+    const response = await axios.get(`${API_URL}`);
+    setLoading(false);
     setCategoryList(response.data.categories);
   }
 
@@ -19,10 +28,17 @@ const CategoriesScreen = () => {
     <CategoryCard name={item.strCategory} image={item.strCategoryThumb} />
   );
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <View>
-      <FlatList data={categoryList} renderItem={renderCategories} />
-      <Button onPress={fetchData} title="Fetch Data" color="#841584" />
+      {!loading ? (
+        <FlatList data={categoryList} renderItem={renderCategories} />
+      ) : (
+        <ActivityIndicator size="large" />
+      )}
     </View>
   );
 };
