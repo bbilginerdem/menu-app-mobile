@@ -16,7 +16,7 @@ const CategoriesScreen = () => {
   }
 
   const renderCategories = ({ item }) => (
-    <CategoryCard name={item.strCategory} />
+    <CategoryCard name={item.strCategory} image={item.strCategoryThumb} />
   );
 
   return (

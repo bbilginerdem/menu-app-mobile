@@ -11,7 +11,14 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerTitleStyle: {
+            color: 'orange',
+          },
+          headerTitleAlign: 'center',
+          // headerBackTitleVisible: false,
+        }}>
         <Stack.Screen name="Categories" component={CategoriesScreen} />
         <Stack.Screen name="Meals" component={MealsScreen} />
         <Stack.Screen name="Detail" component={DetailScreen} />
