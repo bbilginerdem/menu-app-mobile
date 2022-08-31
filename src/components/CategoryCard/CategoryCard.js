@@ -5,14 +5,12 @@ import styles from './CategoryCard.style';
 
 const CategoryCard = props => {
   return (
-    <Pressable>
-      <View style={styles.container}>
-        <View style={styles.categoryContainer}>
-          <Image source={{ uri: props.image }} style={styles.image} />
-          <Text style={styles.text}>{props.name}</Text>
-        </View>
+    <View style={styles.container}>
+      <View style={styles.categoryContainer}>
+        <Image source={{ uri: props.image }} style={styles.image} />
+        <Text style={styles.text}>{props.name}</Text>
       </View>
-    </Pressable>
+    </View>
   );
 };
 

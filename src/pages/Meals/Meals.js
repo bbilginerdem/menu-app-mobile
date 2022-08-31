@@ -3,12 +3,14 @@ import React from 'react';
 
 import styles from './Meals.style';
 
-const MealsScreen = () => {
+const Meals = ({ route }) => {
+  const { category } = route.params;
+
   return (
     <View>
-      <Text>Meals</Text>
+      <Text>{category}</Text>
     </View>
   );
 };
 
-export default MealsScreen;
+export default Meals;

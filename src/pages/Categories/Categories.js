@@ -13,7 +13,7 @@ import { API_URL } from '@env';
 import styles from './Categories.style';
 import CategoryCard from '../../components/CategoryCard';
 
-const CategoriesScreen = () => {
+const CategoriesScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(true);
   const [categoryList, setCategoryList] = useState({});
 
@@ -25,7 +25,12 @@ const CategoriesScreen = () => {
   }
 
   const renderCategories = ({ item }) => (
-    <CategoryCard name={item.strCategory} image={item.strCategoryThumb} />
+    <Pressable
+      onPress={() =>
+        navigation.navigate('Meals', { category: item.strCategory })
+      }>
+      <CategoryCard name={item.strCategory} image={item.strCategoryThumb} />
+    </Pressable>
   );
 
   useEffect(() => {
