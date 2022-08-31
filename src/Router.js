@@ -1,5 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { getHeaderTitle } from '@react-navigation/elements';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import React from 'react';
@@ -9,7 +9,7 @@ import DetailScreen from './pages/Detail';
 import MealsScreen from './pages/Meals';
 import { Button, Text, View } from 'react-native';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const LogoTitle = () => (
   <MaterialIcons
